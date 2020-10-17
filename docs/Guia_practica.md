@@ -12,8 +12,8 @@ Puedes consultar la página de [Setup](docs/Setup.md) si tienes dudas.
 ## Contenidos
 
 - [Inicio](#inicio)
-  - [Inicializar un repositorio desde GitHub](#inicializar-un-repositorio-desde-github)
-  - [Incializar un repositorio desde local](#inicializar-un-repositorio-desde-local)
+  - [Inicializar un repositorio desde Github](#inicializar-un-repositorio-desde-github)
+  - [Inicializar un repositorio desde local](#inicializar-un-repositorio-desde-local)
 - [Git Workflow](#git-workflow)
   - [Git basics](#git-basics)
   - [Gitignore](#gitignore)
@@ -25,13 +25,13 @@ Puedes consultar la página de [Setup](docs/Setup.md) si tienes dudas.
   - [Git revert](#git-revert)
   - [Git squash](#git-squash)
 - [Github](#github)
-  - [Github Fork](#github-forks)
+  - [Github Forks](#github-forks)
   - [Readme.md & Markdown](#readmemd--markdown)
   - [Github issues](#github-issues)
   - [Github projects](#github-projects)
   - [Github pages](#github-pages)
 
-## Inicio
+# Inicio
 
 Empecemos por crear nuestro propio repositorio.
 
@@ -56,7 +56,7 @@ Ya tenemos nuestro repositorio en local y podemos empezar a trabajar!
 ### Inicializar un repositorio desde local
 
 Los repositorios también se pueden inicializar desde tu equipo local. Esta es la forma más adecuada si ya tienes un proyecto en local que quieres subir a GitHub.  
-En este caso vamos a hacerlo mediante linea de comandos pero también hay erramientas visuales que ya mencionaremos.
+En este caso vamos a hacerlo mediante linea de comandos pero también hay herramientas visuales que ya mencionaremos.
 
 1. Abre tu consola de comandos desde un fichero ya existente donde quieras almacenar tu proyecto, puede no estár vacío.
 
@@ -104,14 +104,14 @@ El flujo de trabajo habitual de Git es muy sencillo, desde nuestro repositorio l
 3. Hacemos nuestros cambios en local.
 4. `git add [file]` o `git add --all` Para añadir los cambios realizados en local al _stage_ para incluirlos en el commit.
 5. `git commit -m "Breve descripción de los cambios"` Para "capturar" los cambios realizados. Solo se incluiran en el commit los cambios que previamente hayamos incluido en _stage_.
-6. `git push origin master` Para subir los últimos commits al repositorio remoto.
+6. `git push origin main` Para subir los últimos commits al repositorio remoto.
 
 Extra:
 
 - Con `git status` podemos consultar el estado del repositorio, que nos mostrará un breve resumen de nuestro estado con respecto del repositorio local (commits por delante o por detrás), y listará los cambios realizados desde el último commit según el estado de esos cambios (_staged_, _unstaged_ y _untracked_).
 - Con `git reset [file]` podemos sacar un fichero del _stage_ que hayamos añadido previamente.
 - Si sobre un fichero _unstaged_ ejecutamos `git checkout -- [file]` podemos descartar todos los cambios que hayamos hecho al fichero y devolverlo a su último estado registrado en un commit.
-- Con `git log` podemos consultar los commits que hayamos realizadol.
+- Con `git log` podemos consultar los commits que hayamos realizado.
 
 Para más comandos útiles podéis consultar la [guía de referencia de Git](https://git-scm.com/docs) o usar `git help`.
 
@@ -174,11 +174,11 @@ git push
 
 En el anterior apartado hemos visto como cuando colaboramos en un mismo repositorio es fácil cometer un despiste y provocar un conflicto. Tanto para evitar que tu código se llene de vergonzosos merge conflicts como para organizar mejor el desarollo en proyectos grandes en Git se trabaja con ramas.
 
-Las ramas son declaraciones explicitas de las líneas de desarrollo que mencionamos antes. En un repositorio por defecto existe una única rama (normalmente llamada _master_), es como su nombre indica la rama maesta y en buenas prácticas debería reflejar una versión "estable" del proyecto.
+Las ramas son declaraciones explicitas de las líneas de desarrollo que mencionamos antes. En un repositorio por defecto existe una única rama (normalmente llamada _main_), es como su nombre indica la rama maesta y en buenas prácticas debería reflejar una versión "estable" del proyecto.
 
 No siempre que hacemos commits estamos registrando versiones definitivas del código, puede que queramos registrar puntos intermedios que permitan colaborar a varias personas en la misma característica o bien que nos permita tener una versión previa a la que volver si la liamos en una racha de furia programadora.
 
-En una gran cantidad de proyectos colaborativos podemos encontrar dos ramas principales: _master_ y _develop_. Pero podemos crear las ramas que consideremos siempre que empecemos a desarrollar una nueva característica, corregir un fallo o por cualquier otro motivo. Es tan sencillo como, desde la rama original de la que queremos partir:
+En una gran cantidad de proyectos colaborativos podemos encontrar dos ramas principales: _main_ y _develop_. Pero podemos crear las ramas que consideremos siempre que empecemos a desarrollar una nueva característica, corregir un fallo o por cualquier otro motivo. Es tan sencillo como, desde la rama original de la que queremos partir:
 
 ```shell
 git checkout -b nueva-rama
@@ -189,15 +189,15 @@ Este comando creará una rama nueva en local a la vez que moverá nuestro punto 
 - `git branch` listará todas las ramas sincronizadas en local.
 - `git checkout [rama]` nos permitirá cambiar en cualquier momento entre nuestras ramas de desarrollo.
 
-Una vez hayamos hecho los cambios partinentes en nuestra nueva rama de desarollo podemos fusionarlos a la rama original, para ello volveremos a la rama de la que hayamos partido, por ejemplo _master_ y efectuaremos un merge:
+Una vez hayamos hecho los cambios partinentes en nuestra nueva rama de desarollo podemos fusionarlos a la rama original, para ello volveremos a la rama de la que hayamos partido, por ejemplo _main_ y efectuaremos un merge:
 
 ```shell
-git checkout master
+git checkout main
 git pull
 git merge [rama]
 ```
 
-Si no hay conflictos automaticamente se generará un merge commit para todos los cambios hechos en la rama y estos pasarán a estar disponibles en _master_. No nos olvidemos luego de subir dichos cambios al remoto con `git push`.
+Si no hay conflictos automaticamente se generará un merge commit para todos los cambios hechos en la rama y estos pasarán a estar disponibles en _main_. No nos olvidemos luego de subir dichos cambios al remoto con `git push`.
 
 - `git branch -d [rama]` nos permite borrar una rama cuando ya no la necesitemos.
 
@@ -229,10 +229,10 @@ Con este y otros propósitos surgen las Pull Request, una funcionalidad de GitHu
 
 Para crear una pull request necesitaremos contar con 2 ramas subidas a github con alguna diferencia en su historial.
 
-- Podemos crearla directamente desde la vista principal del proyecto:
+- Podemos crearla directamente desde la vista principal del proyecto:  
   ![Pull request 1](/docs/images/pull_request_1.png)
 - O desde la pestaña dedicada:  
-  ![Pull request 2](/docs/images/pull_request_2.png) ➡️ ![Pull request 3](/docs/images/pull_request_3.png)
+  ![Pull request 2](/docs/images/pull_request_2.png)
 
 Ambos métodos nos llevarán a la vista de creación de Pull Request, donde podemos añadir un título y descripción al PR, así como asignar a miembros del equipo para que revisen o trabajen en el, añadir labels, etc..
 
@@ -246,12 +246,17 @@ Una vez una PR esté lista para ser fusionada se lanza un merge desde la interfa
 
 ### Git ammend
 
+[WIP]
+
 ### Git revert
+
+[WIP]
 
 ### Git squash
 
-## Github
+[WIP]
 
+## Github
 
 ### Github Forks
 
@@ -263,15 +268,15 @@ Tras hacer modificaciones en el fork, puedes pedir que se vuelva a fusionar con 
 
 ### Readme.md & Markdown
 
-Los archivos Readme.md son archivos escritos en Markdown que se suelen usar para documentar los proyectos y hacer guías sobre su utilización/instalación. Markdown es un lenguaje de marcado que permite escribir texto plano, tags de html y añadir gráficos de un gran número de formatos. Puedes entrar en [esta pagina](https://guides.github.com/features/mastering-markdown/) para aprender más sobre markdown.
+Los archivos Readme.md son archivos escritos en Markdown que se suelen usar para documentar los proyectos y hacer guías sobre su utilización/instalación. Markdown es un lenguaje de marcado que permite escribir texto plano, tags de html y añadir gráficos de un gran número de formatos. Puedes entrar en [esta pagina](https://guides.github.com/features/maining-markdown/) para aprender más sobre markdown.
 
 ### Github issues
 
-Puedes usar las issues de un repositorio para definir las tareas a realizar en el proyecto. Encontrarás la pestaña de issues desde la vista general del repositorio 
+Puedes usar las issues de un repositorio para definir las tareas a realizar en el proyecto. Encontrarás la pestaña de issues desde la vista general del repositorio
 
 ![Acceso a issues](/docs/images/issues.png)
 
-Para crear una nueva issue haz click en el botón verde de "New issue" 
+Para crear una nueva issue haz click en el botón verde de "New issue"
 
 ![Crear issues](/docs/images/crear-issue.png)
 
@@ -279,7 +284,7 @@ En la siguiente vista podrás dar un título a la tarea, escribir una descripci�
 
 ### Github projects
 
-Los projects de GitHub son tableros creados para manejar facilmente el progreso de issues. Puedes acceder a ellos en la siguiente pantalla 
+Los projects de GitHub son tableros creados para manejar facilmente el progreso de issues. Puedes acceder a ellos en la siguiente pantalla
 
 ![Acceso projects](/docs/images/projects.png)
 
@@ -296,3 +301,5 @@ Ahora que ya tienes tu tablero puedes mover las issues creadas que aparecen a la
 ![Generación de issues](/docs/images/edit-project.png)
 
 ### Github pages
+
+[WIP]
