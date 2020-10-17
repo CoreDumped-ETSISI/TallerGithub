@@ -1,8 +1,15 @@
 # Instalación de git
 
+- [Creación de cuenta de Github](#creación-de-cuenta-de-github)
 - [Instalación en windows](#instalación-en-windows)
 - [Instalación en mac](#instalación-en-mac)
 - [Instalación en linux](#instalación-en-linux)
+
+## Creación de cuenta de GitHub
+
+Para unirte a GitHub haz click en [este enlace](https://github.com/join) y rellena el formulario con tus datos. Después de esto contesta a las 3 preguntas que te proponen y tras verificar tu mail ya tendrás acceso a todas las funcionalidades de github.
+
+Si eres estudiante y quieres tener acceso a una larga lista de beneficios y GitHub pro gratuito mientras seas estudiante puedes aplicar con tu cuenta educativa en [este enlace](https://education.github.com/discount_requests/student_application)
 
 ## Instalación en windows
 
