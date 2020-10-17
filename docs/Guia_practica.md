@@ -252,12 +252,47 @@ Una vez una PR esté lista para ser fusionada se lanza un merge desde la interfa
 
 ## Github
 
+
 ### Github Forks
+
+Mediante un fork puedes obtener una copia de cualquier repositorio público asociado a tu cuenta. ![Fork a proyecto](/docs/images/fork.png)
+
+Después podrás seleccionar la cuenta/organizacion o grupo al que quieres asociar el fork ya podrás acceder a esa copia del repositorio ![Selección de cuenta](/docs/images/fork2.png)
+
+Tras hacer modificaciones en el fork, puedes pedir que se vuelva a fusionar con el proyecto original y si el propietario da su consentimiento, tus cambios serán registrados en su repositorio.
 
 ### Readme.md & Markdown
 
+Los archivos Readme.md son archivos escritos en Markdown que se suelen usar para documentar los proyectos y hacer guías sobre su utilización/instalación. Markdown es un lenguaje de marcado que permite escribir texto plano, tags de html y añadir gráficos de un gran número de formatos. Puedes entrar en [esta pagina](https://guides.github.com/features/mastering-markdown/) para aprender más sobre markdown.
+
 ### Github issues
 
+Puedes usar las issues de un repositorio para definir las tareas a realizar en el proyecto. Encontrarás la pestaña de issues desde la vista general del repositorio 
+
+![Acceso a issues](/docs/images/issues.png)
+
+Para crear una nueva issue haz click en el botón verde de "New issue" 
+
+![Crear issues](/docs/images/crear-issue.png)
+
+En la siguiente vista podrás dar un título a la tarea, escribir una descripción, asignarle la tarea a miembros o colaboradores del proyecto y añadir tags predeterminados o personalizados ![Generación de issues](/docs/images/submit-issue.png)
+
 ### Github projects
+
+Los projects de GitHub son tableros creados para manejar facilmente el progreso de issues. Puedes acceder a ellos en la siguiente pantalla 
+
+![Acceso projects](/docs/images/projects.png)
+
+Para crear un nuevo tablero haz click en "Create a project"
+
+![Botón Creación de project](/docs/images/create-project.png)
+
+En la siguiente vista podrás darle un nombre al tablero así como una descripción y selccionar una plantilla para el proyecto. Por ejemplo si quieres un tablero con los clásicos "To Do", "In Progress" y "Done" puedes seleccionar "Basic KANBAN"
+
+![Creación de project board](/docs/images/generate-project.png)
+
+Ahora que ya tienes tu tablero puedes mover las issues creadas que aparecen a la derecha a tu tablero y moverlas según vayas haciendo progreso en ellas
+
+![Generación de issues](/docs/images/edit-project.png)
 
 ### Github pages
